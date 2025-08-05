@@ -7,10 +7,7 @@ RUN sudo apt-get update && \
     sudo apt-get install -y --no-install-recommends supervisor*
 RUN sudo chmod -R 755 /app
 RUN sudo chown -R matrix0523:matrix0523 /app
-# Setup Stable Diffusion WebUI Folder
-WORKDIR /app
-
-# Setup Stable Diffusion WebUI Cloudflare Tunnel
+# Setup Cloudflare Tunnel
 WORKDIR /SunshineCloud/
 RUN sudo mkdir -p --mode=0755 /usr/share/keyrings
 RUN sudo curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | sudo tee /usr/share/keyrings/cloudflare-main.gpg >/dev/null
@@ -21,4 +18,4 @@ RUN sudo apt-get update && sudo apt-get install cloudflared -y
 RUN sudo mkdir -vp /etc/supervisor/conf.d
 # COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ENTRYPOINT ["/usr/bin/bash", "-c"]
-CMD ["supervisord", "-c", "/app/supervisord.conf"]
+CMD ["sudo /usr/local/bin/docker-init.sh bash"]

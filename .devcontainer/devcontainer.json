@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/java
+// README at: https://github.com/devcontainers/SunshineNoteslates/tree/main/src/java
 {
-	"name": "temp",
+	"name": "SunshineNotes",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	// "image": "sunshinecloud007/base-bookworm:lite",
 	"build": {
@@ -21,50 +21,25 @@
 			"upgradePackages": true,
 			"nonFreePackages": true,
 			"username": "jamesmith0817",
-			"userUid": "1329",
+			"userUid": "1001",
 			"userGid": "1329"
 		},
-		"ghcr.io/devcontainers/features/conda:1": {
-			"addCondaForge": true,
-			"version": "latest"
+		"ghcr.io/devcontainers/features/node:1": {
+			"nodeGypDependencies": true,
+			"installYarnUsingApt": true,
+			"version": "lts",
+			"pnpmVersion": "latest",
+			"nvmVersion": "latest"
 		},
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {
-			"moby": true,
-			"azureDnsAutoDetection": true,
-			"installDockerBuildx": true,
-			"installDockerComposeSwitch": true,
+		"ghcr.io/devcontainers/features/rust:1": {
 			"version": "latest",
-			"dockerDashComposeVersion": "v2"
-		},
-		"ghcr.io/devcontainers/features/git:1": {
-			"version": "system"
-		},
-		"ghcr.io/devcontainers/features/git-lfs:1": {
-			"installDirectlyFromGitHubRelease": true,
-			"version": "latest"
-		},
-		"ghcr.io/devcontainers/features/github-cli:1": {
-			"installDirectlyFromGitHubRelease": true,
-			"version": "latest"
-		},
-		"ghcr.io/devcontainers/features/nvidia-cuda:2": {
-			"installCudnn": true,
-			"installCudnnDev": true,
-			"installNvtx": true,
-			"installToolkit": true,
-			"cudaVersion": "12.4",
-			"cudnnVersion": "9.4.0.58"
-		},
-		"ghcr.io/devcontainers/features/python:1": {
-			"installTools": true,
-			"optimize": true,
-			"enableShared": true,
-			"installJupyterlab": true,
-			"version": "3.10"
+			"profile": "complete",
+			"targets": "x86_64-unknown-uefi",
+			"components": ""
 		}
 	},
-	"workspaceMount": "source=${localWorkspaceFolder},target=/SunshineCloud/temp-Git,type=bind,consistency=cached",
-	"workspaceFolder": "/SunshineCloud/temp-Git",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/SunshineCloud/SunshineNotes-Git,type=bind,consistency=cached",
+	"workspaceFolder": "/SunshineCloud/SunshineNotes-Git",
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
