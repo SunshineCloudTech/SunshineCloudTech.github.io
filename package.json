@@ -8,6 +8,7 @@
     "docs:build": "vuepress-vite build docs",
     "docs:clean-dev": "vuepress-vite dev docs --clean-cache",
     "docs:dev": "vuepress-vite dev docs",
+    "docs:preview": "http-server dist/ -p 8181",
     "docs:update-package": "npx vp-update"
   },
   "devDependencies": {
@@ -19,6 +20,7 @@
   },
   "dependencies": {
     "@vuepress/plugin-slimsearch": "^2.0.0-rc.112",
+    "http-server": "^14.1.1",
     "nodejs-jieba": "^0.3.0"
   }
 }
