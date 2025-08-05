@@ -174,8 +174,8 @@ Icon?
 *.swo
 
 # Lock files (keep pnpm-lock.yaml but ignore others)
-package-lock.json
-yarn.lock
+# package-lock.json
+# yarn.lock
 
 # Local development
 .local
