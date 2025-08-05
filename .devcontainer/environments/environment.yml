@@ -1,0 +1,16 @@
+# conda env update -n base -f 
+#name: stable-diffusion-webui
+channels: 
+  - pytorch
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip=24.0
+  - cuda=12.4
+  - pytorch
+  - cudnn
+  - torchvision
+  - torchaudio
+  - jupyterlab
+  - jupyterlab-language-pack-zh-CN
