@@ -125,9 +125,9 @@ docs/.vuepress/.temp/
 .history/*
 
 # IDE - IntelliJ
-.idea/
-*.swp
-*.swo
+# .idea/
+# *.swp
+# *.swo
 
 # macOS
 .DS_Store
