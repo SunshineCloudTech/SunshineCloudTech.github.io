@@ -17,16 +17,13 @@ RUN git clone --recursive https://github.com/SunshineCloudTech/SunshineCloudTech
 WORKDIR /app/SunshineCloudTech.github.io
 
 # 安装依赖
-RUN pnpm install
+RUN corepack enable
 
 # 安装nodejs-jieba
-RUN pnpm install nodejs-jieba
-
-# 安装vuepress-plugin-slimsearch
-RUN pnpm install @vuepress/plugin-slimsearch
+RUN npm ci
 
 # 构建应用
-RUN pnpm docs:build
+RUN npm run docs:build
 
 # 第二阶段：使用nginx部署
 FROM nginx:stable-alpine
