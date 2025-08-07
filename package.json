@@ -19,6 +19,7 @@
     "vuepress-theme-hope": "2.0.0-rc.94"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.0.0",
     "@vuepress/plugin-slimsearch": "^2.0.0-rc.112",
     "http-server": "^14.1.1"
   }
