@@ -7,3 +7,6 @@
 [submodule "docs"]
 	path = src                                          # 子模块在本地的路径
 	url = https://github.com/SunshineCloudTech/docs.git # 子模块的远程仓库地址
+[submodule "src"]
+	path = src
+	url = https://github.com/SunshineCloudTech/docs.git
