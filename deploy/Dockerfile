@@ -1,5 +1,5 @@
 # 第一阶段：构建应用
-FROM node:20 AS builder
+FROM node:lts AS builder
 
 # 设置工作目录
 WORKDIR /app
