@@ -21,6 +21,6 @@
   "dependencies": {
     "@vuepress/plugin-slimsearch": "^2.0.0-rc.112",
     "http-server": "^14.1.1",
-    "nodejs-jieba": "^0.3.0"
+    "nodejs-jieba": "^0.2.1"
   }
 }

@@ -1,25 +1,25 @@
 # 第一阶段：构建应用
-FROM node:lts-alpine AS builder
+FROM node:20 AS builder
 
 # 设置工作目录
 WORKDIR /app
 
-# 安装pnpm
+# 增加 Node.js 内存限制
+ENV NODE_OPTIONS="--max-old-space-size=4096"
+
+# 安装构建依赖
+RUN apt update && apt install git python3 make g++ build-essential -y
+
+# 安装 pnpm
 RUN npm install -g pnpm
 
-# 安装git和git-lfs
-RUN apk update && apk add --no-cache git git-lfs 
-
-# 克隆代码仓库
-RUN git clone --recursive https://github.com/SunshineCloudTech/SunshineCloudTech.github.io.git
-
-# 进入项目目录
+# 复制package.json和pnpm-lock.yaml
+RUN git clone --recursive https://github.com/SunshineCloudTech/SunshineCloudTech.github.io
 WORKDIR /app/SunshineCloudTech.github.io
-
 # 安装依赖
 RUN corepack enable
 
-# 安装nodejs-jieba
+# 安装依赖
 RUN npm ci
 
 # 构建应用
@@ -30,6 +30,9 @@ FROM nginx:stable-alpine
 
 # 复制自定义nginx配置文件
 COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
+
+# 安装curl用于健康检查
+RUN apk add --no-cache curl
 
 # 从构建器阶段复制构建好的文件到nginx的服务目录
 COPY --from=builder /app/SunshineCloudTech.github.io/dist /usr/share/nginx/html
