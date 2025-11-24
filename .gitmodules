@@ -4,9 +4,6 @@
 # docs 子模块
 # 用于管理文档内容，将外部仓库的文档内容作为子模块引入
 # 这样可以将文档内容与主仓库分离管理，便于协作和版本控制
-# [submodule "docs"]
-# 	path = src                                          # 子模块在本地的路径
-# 	url = https://github.com/SunshineCloudTech/docs.git # 子模块的远程仓库地址
-[submodule "src"]
-	path = src
+[submodule "docs"]
+	path = docs
 	url = https://github.com/SunshineCloudTech/docs.git
